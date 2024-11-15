@@ -46,13 +46,13 @@ jobs:
         CACHE_NEXT: ${{ github.event.inputs.CACHE_NEXT }}
       run: |
         set -e -x
-        curl -sqL https://api.github.com/repos/abextm/runelite-cache-code-updater/releases/latest \
+        curl -sqL https://api.github.com/repos/felanbird/runelite-cache-code-updater/releases/latest \
           | jq -r '.assets[] | select(.name | contains(".jar")) | .browser_download_url' \
           | wget -qi- -O rlccau.jar
         echo "$KEYS" | base64 -d | tar -xz -C ~/
         eval $(ssh-agent)
-        export REMOTE_RUNELITE_ORIGIN=git@runelite:abextm/runelite.git
-        export REMOTE_SRN_ORIGIN=git@static.runelite.net:abextm/static.runelite.net.git
+        export REMOTE_RUNELITE_ORIGIN=git@runelite:felanbird/runelite.git
+        export REMOTE_SRN_ORIGIN=git@static.runelite.net:felanbird/static.runelite.net.git
         export GIT_SSH=ssh
         java -cp rlccau.jar net.runelite.cache.codeupdater.Main
     - name: "GC"
