@@ -62,6 +62,10 @@ public class ItemVariationsUpdate
 		{"trident of the seas", "trident"},
 		{"trident of the swamp", "toxic trident"},
 		{"toxic staff of the dead", "toxic staff"},
+		{"blazing blowpipe", "toxic blowpipe"},
+		{"dinh's blazing bulwark", "dinh's bulwark"},
+		{"twisted ancestral \\(hat|robe \\(top|bottom\\)\\)", "ancestral robe $1"},
+		{"sanguine torva (full helm|plate(legs|body))", "torva $1"},
 	};
 
 	public static void update() throws IOException
